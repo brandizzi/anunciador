@@ -1,8 +1,22 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<window id="main" title="My App" width="300" height="300"
+<window id="main" title="Anunciador Blog Editor" width="300" height="300"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <caption label="Anunciador" />
-    <xhtml:iframe src="editor.xhtml"></xhtml:iframe>
+    <script type="application/x-javascript" src="editor.js" />
+
+    <toolbar>
+        <button label="Bold" oncommand="editorController.onBoldButtonCommand();" />
+        <button label="Italic" oncommand="editorController.onItalicButtonCommand();" />
+        <button label="Underline" oncommand="editorController.onUnderlineButtonCommand();" />
+        <menulist id="color" label="Color" oncommand="editorController.onColorSelectCommand();">
+            <menupopup>
+                <menuitem label="Red" value="#ff0000"/>
+                <menuitem label="Green" value="#00ff00"/>
+                <menuitem label="Blue" value="#0000ff"/>
+                <menuitem label="Yellow" value="#ffff00"/>
+            </menupopup>
+        </menulist>
+    </toolbar>
+    <editor id="editor" type="content-primary" editortype="html" src="about:blank" flex="1" />
 </window>
