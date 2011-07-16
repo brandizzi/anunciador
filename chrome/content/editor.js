@@ -9,22 +9,33 @@ var AnunciadorEditor = {
     },
 
     onBoldButtonCommand : function() {
-        AnunciadorEditor.commandManager.doCommand('cmd_bold', {}, AnunciadorEditor.contentWindow);
+        AnunciadorEditor.doCommand('cmd_bold');
     },
     onItalicButtonCommand : function() {
-        AnunciadorEditor.commandManager.doCommand('cmd_italic', {}, AnunciadorEditor.contentWindow);
+        AnunciadorEditor.doCommand('cmd_italic');
     },
     onUnderlineButtonCommand : function() {
-        AnunciadorEditor.commandManager.doCommand('cmd_underline', {}, AnunciadorEditor.contentWindow);
+        AnunciadorEditor.doCommand('cmd_underline');
     },
     onColorSelectCommand : function() {
         var colorMenuList = document.getElementById('color');
         var selected = colorMenuList.selectedItem;
         var color = colorMenuList.selectedItem.value;
-        var commandParams = Components.classes['@mozilla.org/embedcomp/command-params;1'].getService(Components.interfaces.nsICommandParams);
-        commandParams.setCStringValue("state_attribute", color);
-        AnunciadorEditor.commandManager.doCommand(
-                'cmd_fontColor', commandParams, 
+        AnunciadorEditor.doCommand('cmd_fontColor', {state_attribute : color});
+    },
+
+    doCommand : function(command, parameters) {
+        var commandParams = {};
+        if (parameters) {
+            commandParams = Components.
+                    classes['@mozilla.org/embedcomp/command-params;1'].
+                    getService(Components.interfaces.nsICommandParams);
+            for (parameter in parameters) {
+                commandParams.setCStringValue("parameter", 
+                        parameters[parameter]);
+            }
+        }
+        AnunciadorEditor.commandManager.doCommand(command, commandParams, 
                 AnunciadorEditor.contentWindow);
     }
 }
