@@ -21,7 +21,7 @@ var AnunciadorEditor = {
         var colorMenuList = document.getElementById('color');
         var selected = colorMenuList.selectedItem;
         var color = colorMenuList.selectedItem.value;
-        AnunciadorEditor.doCommand('cmd_fontColor', {state_attribute : color});
+        AnunciadorEditor.doCommand('cmd_fontColor', {"state_attribute" : color});
     },
 
     doCommand : function(command, parameters) {
@@ -30,9 +30,8 @@ var AnunciadorEditor = {
             commandParams = Components.
                     classes['@mozilla.org/embedcomp/command-params;1'].
                     getService(Components.interfaces.nsICommandParams);
-            for (parameter in parameters) {
-                commandParams.setCStringValue("parameter", 
-                        parameters[parameter]);
+            for (var parameter in parameters) {
+                commandParams.setCStringValue(parameter, parameters[parameter]);
             }
         }
         AnunciadorEditor.commandManager.doCommand(command, commandParams, 
