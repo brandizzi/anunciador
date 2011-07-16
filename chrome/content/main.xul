@@ -6,10 +6,10 @@
     <script type="application/x-javascript" src="editor.js" />
 
     <toolbar>
-        <button label="Bold" oncommand="editorController.onBoldButtonCommand();" />
-        <button label="Italic" oncommand="editorController.onItalicButtonCommand();" />
-        <button label="Underline" oncommand="editorController.onUnderlineButtonCommand();" />
-        <menulist id="color" label="Color" oncommand="editorController.onColorSelectCommand();">
+        <button label="Bold" oncommand="AnunciadorEditor.onBoldButtonCommand();" />
+        <button label="Italic" oncommand="AnunciadorEditor.onItalicButtonCommand();" />
+        <button label="Underline" oncommand="AnunciadorEditor.onUnderlineButtonCommand();" />
+        <menulist id="color" label="Color" oncommand="AnunciadorEditor.onColorSelectCommand();">
             <menupopup>
                 <menuitem label="Red" value="#ff0000"/>
                 <menuitem label="Green" value="#00ff00"/>
