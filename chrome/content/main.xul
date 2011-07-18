@@ -1,20 +1,22 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="main.css" type="text/css"?>
 <window id="main" title="Anunciador Blog Editor" width="300" height="300"
     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <script type="application/x-javascript" src="editor.js" />
 
     <toolbar>
-        <button class="toolbar" label="Bold" oncommand="AnunciadorEditor.onBoldButtonCommand();" />
-        <button class="toolbar" label="Italic" oncommand="AnunciadorEditor.onItalicButtonCommand();" />
-        <button class="toolbar" label="Underline" oncommand="AnunciadorEditor.onUnderlineButtonCommand();" />
+        <button class="tt" image="icons/text_bold.png" oncommand="AnunciadorEditor.onBoldButtonCommand();" />
+        <button image="icons/text_italic.png" oncommand="AnunciadorEditor.onItalicButtonCommand();" />
+        <button image="icons/text_underline.png" oncommand="AnunciadorEditor.onUnderlineButtonCommand();" />
         <menulist class="toolbar" id="color" label="Color" oncommand="AnunciadorEditor.onColorSelectCommand();">
             <menupopup>
-                <menuitem label="Red" value="#ff0000"/>
-                <menuitem label="Green" value="#00ff00"/>
-                <menuitem label="Blue" value="#0000ff"/>
-                <menuitem label="Yellow" value="#ffff00"/>
+                <menuitem label="Black" value="#000000" style="color: black;"/>
+                <menuitem label="Red" value="#ff0000" style="color: red;"/>
+                <menuitem label="Green" value="#00ff00" style="color: green;"/>
+                <menuitem label="Blue" value="#0000ff" style="color: blue;"/>
+                <menuitem label="Yellow" value="#ffff00" style="color: yellow;"/>
             </menupopup>
         </menulist>
     </toolbar>

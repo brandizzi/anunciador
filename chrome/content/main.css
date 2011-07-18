@@ -1,0 +1,15 @@
+toolbar * {
+    padding: 0px ! important;
+    margin: 1px ! important;
+    -moz-appearance: none;
+}
+
+toolbar button {
+    min-width: 20px;
+    max-width: 20px;
+    border: 1px solid -moz-Dialog;
+}
+
+toolbar button:hover {
+    background-color: -moz-Dialog;
+}
