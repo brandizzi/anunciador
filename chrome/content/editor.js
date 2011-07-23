@@ -24,6 +24,10 @@ var AnunciadorEditor = {
         AnunciadorEditor.doCommand('cmd_fontColor', {"state_attribute" : color});
     },
 
+    onShow : function() {
+        alert((new XMLSerializer()).serializeToString(AnunciadorEditor.editor.contentDocument));
+    },
+
     doCommand : function(command, parameters) {
         var commandParams = {};
         if (parameters) {

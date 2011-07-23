@@ -10,6 +10,7 @@
         <toolbarbutton class="tt" image="icons/text_bold.png" oncommand="AnunciadorEditor.onBoldButtonCommand();" />
         <toolbarbutton image="icons/text_italic.png" oncommand="AnunciadorEditor.onItalicButtonCommand();" />
         <toolbarbutton image="icons/text_underline.png" oncommand="AnunciadorEditor.onUnderlineButtonCommand();" />
+        <toolbarbutton value="icons/text_underline.png" oncommand="AnunciadorEditor.onShow();" />
         <menulist class="toolbar" id="color" label="Color" oncommand="AnunciadorEditor.onColorSelectCommand();">
             <menupopup>
                 <menuitem label="Black" value="#000000" style="color: black;"/>

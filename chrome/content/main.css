@@ -1,8 +1,3 @@
-toolbar * {
-    padding: 0px ! important;
-    margin: 1px ! important;
-}
-
 toolbar toolbarbutton:hover {
     background-color: -moz-Dialog;
 }
