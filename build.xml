@@ -56,18 +56,15 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 				jslintpath="${js.lint.full.path}">
 		    <fileset dir="${js.src.path}">
 		        <include name="**/*.js"/>
-		    </fileset>
+				<exclude name="**/rhinoUnit*.js"/>
+				<exclude name="**/*jslint*.js"/>
+				<exclude name="**/sinon.js"/>
+				<exclude name="**/io.js"/>
+			</fileset>
 		</jslintant>
 		<jslintant options="{eqeqeq : true, white: true, plusplus : false, bitwise : true, evil: true, passfail: false}"
 				 jslintpath="${js.lint.full.path}">
 			<fileset dir="${js.test.path}"/>
-		</jslintant>
-		<jslintant options="{eqeqeq : true, white: true, plusplus : false, bitwise : true, evil: true, passfail: false}"
-				 jslintpath="${js.lint.full.path}">
-			<fileset dir="example">
-				<include name="${js.test.path}/*.js"/>
-				<include name="${js.src.path}/*.js"/>
-		    </fileset>
 		</jslintant>
 	</target>
 	

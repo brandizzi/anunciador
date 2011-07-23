@@ -1,34 +1,34 @@
 var AnunciadorEditor = {
     editor : null,
 
-    onLoad : function() {
+    onLoad : function () {
         AnunciadorEditor.editor = document.getElementById('editor');
         AnunciadorEditor.editor.contentDocument.designMode = 'on';
         AnunciadorEditor.contentWindow = AnunciadorEditor.editor.contentWindow;
         AnunciadorEditor.commandManager = AnunciadorEditor.editor.commandManager;
     },
 
-    onBoldButtonCommand : function() {
+    onBoldButtonCommand : function () {
         AnunciadorEditor.doCommand('cmd_bold');
     },
-    onItalicButtonCommand : function() {
+    onItalicButtonCommand : function () {
         AnunciadorEditor.doCommand('cmd_italic');
     },
-    onUnderlineButtonCommand : function() {
+    onUnderlineButtonCommand : function () {
         AnunciadorEditor.doCommand('cmd_underline');
     },
-    onColorSelectCommand : function() {
+    onColorSelectCommand : function () {
         var colorMenuList = document.getElementById('color');
         var selected = colorMenuList.selectedItem;
         var color = colorMenuList.selectedItem.value;
         AnunciadorEditor.doCommand('cmd_fontColor', {"state_attribute" : color});
     },
 
-    onShow : function() {
+    onShow : function () {
         alert((new XMLSerializer()).serializeToString(AnunciadorEditor.editor.contentDocument));
     },
 
-    doCommand : function(command, parameters) {
+    doCommand : function (command, parameters) {
         var commandParams = {};
         if (parameters) {
             commandParams = Components.
@@ -41,5 +41,5 @@ var AnunciadorEditor = {
         AnunciadorEditor.commandManager.doCommand(command, commandParams, 
                 AnunciadorEditor.contentWindow);
     }
-}
+};
 window.addEventListener("load", AnunciadorEditor.onLoad, false);
